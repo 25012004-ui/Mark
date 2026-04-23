@@ -1,13 +1,21 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./App.css";
 
 function App() {
+  const navigate = useNavigate();
+
+  const handleStart = () => {
+    navigate("/products"); // navigates to product listing page
+  };
+
   return (
     <div className="landing-page">
-      <div className="content">
-        <h1>Paradise Nursery</h1>
-        <p>Welcome to your green paradise 🌿</p>
-        <button onClick={() => alert("Welcome to Paradise Nursery!")}>
+      <div className="overlay">
+        <h1>Welcome to Paradise Nursery</h1>
+        <p>Your one-stop shop for beautiful indoor plants 🌿</p>
+
+        <button className="start-btn" onClick={handleStart}>
           Get Started
         </button>
       </div>
